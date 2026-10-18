@@ -104,7 +104,7 @@ class _IcecreamAppState extends State<IcecreamApp> {
       (s) => drink = s.substring(0, s.lastIndexOf('  ')),
     );
 
-    final toppings = Wrap(
+    final food_menu = Wrap(
       spacing: 6,
       children: [
         for (final s in ['🌮タコス', '🍙おにぎり', '🍛カレー', '🥟餃子', '🍝スパゲティ'])
@@ -121,7 +121,7 @@ class _IcecreamAppState extends State<IcecreamApp> {
           ),
       ],
     );
-    final decorations = Column(
+    final snack_menu = Column(
       children: [
         choices(['なし', '🍩ドーナツ', '🍪クッキー', '🍮プリン'], snack, (s) => snack = s),
         if (snack != 'なし')
@@ -222,9 +222,9 @@ class _IcecreamAppState extends State<IcecreamApp> {
               const Text('商品を選ぶ'),
               products,
               const Text('ごはんもの（各800円）'),
-              toppings,
+              food_menu,
               const Text('おやつ（各500円）'),
-              decorations,
+              snack_menu,
               const Text('無料サービス'),
               supplies,
               const Divider(),
